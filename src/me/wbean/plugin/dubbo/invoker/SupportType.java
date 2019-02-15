@@ -216,6 +216,9 @@ enum SupportType {
             JSONObject result = new JSONObject(allField.length);
 
             for (PsiField psiField : allField) {
+                if(psiField.getModifierList().hasModifierProperty("static") || psiField.getModifierList().hasModifierProperty("final") ){
+                    continue;
+                }
                 SupportType supportType = SupportType.touch(psiField);
                 if (supportType == SupportType.OTHER) {
                     PsiClass subPsiClass = JavaPsiFacade.getInstance(psiClass.getProject()).findClass(psiField.getType().getCanonicalText(), new ProjectAndLibrariesScope(psiClass.getProject()));
