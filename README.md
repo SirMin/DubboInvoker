@@ -1,4 +1,8 @@
 # DubboInvoker
+
+https://plugins.jetbrains.com/plugin/11960-beanconverter
+
+
  a develop tool help test dubbo service.<br/>
       call dubbo service with several click.<br/>
       auto generate param value according param type.<br/>

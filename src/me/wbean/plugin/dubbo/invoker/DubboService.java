@@ -166,6 +166,9 @@ public class DubboService {
          */
         private Map<String, String>  getJavaDocParam() {
             Map<String, String> docParams = new HashMap<>();
+            if(psiDocComment == null){
+                return docParams;
+            }
             for (PsiDocTag docTag : psiDocComment.findTagsByName(PARAM_TAG)) {
                 if(docTag.getValueElement() == null){
                     continue;
